@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Cinta • Miftha Jannah Ramadhani</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS - Animate On Scroll Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(145deg, #0a0204, #120608, #1a0a0e);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ========== BACKGROUND COSMIC ELEGAN ========== */
+    .cosmic-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Ccircle cx="20" cy="30" r="1" fill="white" opacity="0.3"/%3E%3Ccircle cx="80" cy="60" r="1.2" fill="white" opacity="0.25"/%3E%3Ccircle cx="150" cy="40" r="0.8" fill="white" opacity="0.3"/%3E%3Ccircle cx="180" cy="120" r="1" fill="white" opacity="0.2"/%3E%3Ccircle cx="50" cy="150" r="0.9" fill="white" opacity="0.25"/%3E%3Ccircle cx="120" cy="180" r="1.1" fill="white" opacity="0.2"/%3E%3C/svg%3E') repeat;
+      animation: starMove 350s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes starMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(-2000px); }
+    }
+
+    .nebula {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(200, 80, 120, 0.02) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(170, 60, 110, 0.02) 0%, transparent 50%),
+                  radial-gradient(circle at 50% 40%, rgba(220, 90, 140, 0.01) 0%, transparent 60%);
+      filter: blur(80px);
+      animation: nebulaFloat 50s ease-in-out infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes nebulaFloat {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+      50% { transform: scale(1.3) rotate(5deg); opacity: 0.5; }
+    }
+
+    /* ========== ANIMASI MASUK HALUS ========== */
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .cosmic-container {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 100;
+      animation: fadeInScale 1s ease-out;
+    }
+
+    .navbar-cosmic {
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    /* ========== NAVBAR PREMIUM ========== */
+    .navbar-cosmic {
+      background: rgba(12, 6, 8, 0.7);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255, 180, 200, 0.2);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 0.5rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .logo-cosmic {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-cosmic i {
+      font-size: 1.8rem;
+      color: #ffc0d0;
+      text-shadow: 0 0 15px rgba(255, 100, 130, 0.4);
+      animation: heartbeat 3.5s ease-in-out infinite;
+    }
+
+    .logo-cosmic span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffe0e8, #ffc0d0, #ffa0b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 3px;
+    }
+
+    .back-btn-cosmic {
+      background: rgba(255, 100, 130, 0.1);
+      border: 1px solid rgba(255, 200, 220, 0.3);
+      border-radius: 40px;
+      padding: 0.5rem 1.5rem;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      backdrop-filter: blur(15px);
+      text-decoration: none;
+    }
+
+    .back-btn-cosmic:hover {
+      background: rgba(255, 100, 130, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 0 0 25px rgba(255, 100, 130, 0.3);
+    }
+
+    /* ========== HEADER PREMIUM ========== */
+    .cosmic-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cosmic-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffe0e8, #ffc0d0, #ffa0b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(255, 100, 130, 0.3);
+      margin-bottom: 0.4rem;
+      letter-spacing: 8px;
+    }
+
+    .cosmic-header p {
+      color: #ffd5e0;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-shadow: 0 0 15px rgba(255, 100, 130, 0.3);
+      background: rgba(255, 100, 130, 0.05);
+      backdrop-filter: blur(10px);
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 200, 220, 0.2);
+    }
+
+    /* ========== GALLERY FLEX ========== */
+    .gallery-cloud {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ========== ANIMASI GERAK DI KOTAK ========== */
+    @keyframes cardPulse {
+      0% {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 200, 220, 0.1) inset, 0 0 0px rgba(255, 120, 150, 0);
+      }
+      50% {
+        box-shadow: 0 20px 45px rgba(255, 80, 120, 0.15), 0 0 0 1px rgba(255, 200, 220, 0.2) inset, 0 0 20px rgba(255, 120, 150, 0.15);
+      }
+      100% {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 200, 220, 0.1) inset, 0 0 0px rgba(255, 120, 150, 0);
+      }
+    }
+
+    @keyframes borderGlow {
+      0% {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+      50% {
+        border-color: rgba(255, 180, 200, 0.3);
+      }
+      100% {
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    @keyframes softFloat {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-3px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* CARD PREMIUM DENGAN ANIMASI GERAK */
+    .cloud-card {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: rgba(15, 8, 12, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 35px;
+      padding: 1.2rem 1.8rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 200, 220, 0.1) inset;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      width: 100%;
+      
+      /* ANIMASI GERAK KONTINYU */
+      animation: cardPulse 4s ease-in-out infinite, 
+                 borderGlow 5s ease-in-out infinite,
+                 softFloat 6s ease-in-out infinite;
+      animation-delay: 0s, 0.5s, 1s;
+    }
+
+    /* HOVER EFFECT - ANIMASI BERUBAH */
+    .cloud-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 30px 60px rgba(255, 80, 120, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.4) inset, 0 0 40px rgba(255, 120, 150, 0.25);
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(22, 12, 16, 0.7);
+      animation: softFloat 3s ease-in-out infinite;
+    }
+
+    .cloud-card:nth-child(odd) { 
+      flex-direction: row; 
+      animation-delay: 0s, 0.2s, 0.5s;
+    }
+    .cloud-card:nth-child(even) { 
+      flex-direction: row-reverse;
+      animation-delay: 0.3s, 0.7s, 1.2s;
+    }
+
+    /* ANIMASI KHUSUS UNTUK FOTO */
+    @keyframes photoGlow {
+      0% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 120, 150, 0.15); }
+      50% { box-shadow: 0 20px 40px rgba(255, 80, 120, 0.25), 0 0 50px rgba(255, 120, 150, 0.3); }
+      100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 120, 150, 0.15); }
+    }
+
+    .photo-cloud {
+      width: 180px;
+      height: 180px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 120, 150, 0.15);
+      flex-shrink: 0;
+      transition: all 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0608;
+      
+      /* ANIMASI GLOW PADA FOTO */
+      animation: photoGlow 5s ease-in-out infinite;
+    }
+
+    .cloud-card:hover .photo-cloud {
+      animation: photoGlow 2.5s ease-in-out infinite;
+    }
+
+    .photo-cloud img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .cloud-card:hover .photo-cloud img {
+      transform: scale(1.15);
+    }
+
+    .photo-cloud::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, transparent 70%, rgba(0, 0, 0, 0.1));
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .cloud-card:hover .photo-cloud::after {
+      opacity: 1;
+    }
+
+    .hover-cloud {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      color: white;
+      padding: 0.8rem 0.8rem 0.6rem;
+      transform: translateY(100%);
+      transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      backdrop-filter: blur(8px);
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-align: center;
+      border-top: 1px solid rgba(255, 200, 210, 0.3);
+    }
+
+    .photo-cloud:hover .hover-cloud {
+      transform: translateY(0);
+    }
+
+    .hover-cloud i {
+      color: #ffb3c6;
+      margin-right: 5px;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+
+    .content-cloud {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    /* ========== BADGE DENGAN ANIMASI ========== */
+    .badge-love {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(145deg, rgba(255, 77, 109, 0.9), rgba(139, 26, 46, 0.9));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 20px rgba(255, 0, 50, 0.2);
+      animation: heartbeat 2.5s ease-in-out infinite, rotateSlow 20s linear infinite;
+      z-index: 50;
+    }
+
+    .badge-crystal {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(145deg, rgba(255, 200, 210, 0.9), rgba(255, 150, 170, 0.9));
+      border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 20px rgba(255, 50, 100, 0.15);
+      animation: floatBadge 5s ease-in-out infinite, shimmer 3s ease-in-out infinite;
+      z-index: 50;
+    }
+
+    @keyframes shimmer {
+      0% { border-color: rgba(255, 255, 255, 0.9); }
+      50% { border-color: rgba(255, 220, 230, 0.9); box-shadow: 0 0 25px rgba(255, 200, 210, 0.5); }
+      100% { border-color: rgba(255, 255, 255, 0.9); }
+    }
+
+    .cloud-card:nth-child(even) .badge-love {
+      left: auto;
+      right: -12px;
+    }
+    .cloud-card:nth-child(even) .badge-crystal {
+      right: auto;
+      left: -12px;
+    }
+
+    .badge-love i, .badge-crystal i {
+      color: white;
+      font-size: 1.5rem;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    @keyframes rotateSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(15deg); }
+    }
+
+    /* ANIMASI KLIK */
+    @keyframes photoClickPop {
+      0% { transform: scale(1); }
+      30% { transform: scale(0.96); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5); }
+      70% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+    .cloud-card:active .photo-cloud {
+      animation: photoClickPop 0.4s ease;
+    }
+    @keyframes badgeClick {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    .cloud-card:active .badge-love i, .cloud-card:active .badge-crystal i {
+      animation: badgeClick 0.6s ease;
+    }
+
+    /* ========== CAPTION ========== */
+    .caption-cloud {
+      text-align: center;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 100%;
+    }
+    .caption-cloud.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .caption-content {
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.4;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 70, 110, 0.2);
+      border-radius: 40px;
+      border-left: 4px solid rgba(255, 77, 109, 0.7);
+      border-right: 4px solid rgba(255, 77, 109, 0.7);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      position: relative;
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.15);
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      margin-left: 3px;
+      background: #ffb3c6;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    @keyframes numberPop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .reaction-item span {
+      display: inline-block;
+      animation: numberPop 0.3s ease;
+    }
+
+    /* ========== REACTION ========== */
+    .reaction-cloud {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0;
+      border-top: 1px solid rgba(255, 200, 220, 0.15);
+      border-bottom: 1px solid rgba(255, 200, 220, 0.15);
+      background: rgba(0,0,0,0.2);
+      border-radius: 40px;
+    }
+    .reaction-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.8rem;
+      transition: 0.3s;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+    }
+    .reaction-item i {
+      color: #ffb3c6;
+      font-size: 1rem;
+      filter: drop-shadow(0 0 5px rgba(255, 77, 109, 0.3));
+    }
+    .reaction-item:hover i {
+      transform: scale(1.3);
+      color: #ff8aa1;
+    }
+    .reaction-item:hover {
+      background: rgba(255, 77, 109, 0.1);
+    }
+
+    /* ========== WIDGET LAGU DENGAN ANIMASI ========== */
+    .music-foto-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(20, 10, 14, 0.6);
+      backdrop-filter: blur(30px);
+      border-radius: 40px;
+      padding: 0.8rem 0.6rem;
+      border: 1.5px solid rgba(255, 170, 190, 0.4);
+      box-shadow: 0 0 40px rgba(255, 77, 109, 0.15);
+      width: 100%;
+      max-width: 170px;
+      margin: 0.1rem auto;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+      
+      /* ANIMASI UNTUK WIDGET LAGU */
+      animation: musicPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes musicPulse {
+      0% { box-shadow: 0 0 40px rgba(255, 77, 109, 0.15); border-color: rgba(255, 170, 190, 0.4); }
+      50% { box-shadow: 0 0 60px rgba(255, 100, 130, 0.25); border-color: rgba(255, 200, 220, 0.6); }
+      100% { box-shadow: 0 0 40px rgba(255, 77, 109, 0.15); border-color: rgba(255, 170, 190, 0.4); }
+    }
+    
+    .music-foto-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,140,170,0.1) 0%, transparent 70%);
+      animation: rotateGlow 20s linear infinite;
+      z-index: 0;
+    }
+    
+    @keyframes rotateGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .cloud-card:hover .music-foto-card {
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 70px rgba(255, 77, 109, 0.35);
+      transform: scale(1.03);
+      background: rgba(25, 12, 16, 0.7);
+      animation: musicPulse 2s ease-in-out infinite;
+    }
+
+    .music-icon-big {
+      width: 55px;
+      height: 55px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 77, 109, 0.8), rgba(112, 16, 32, 0.8));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 30px rgba(255, 77, 109, 0.3);
+      animation: pulse-glow 3s infinite alternate, spin-slow 20s infinite linear;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 20px rgba(255, 77, 109, 0.3); transform: scale(1); }
+      100% { box-shadow: 0 0 50px rgba(255, 77, 109, 0.5); transform: scale(1.08); }
+    }
+
+    .music-icon-big i {
+      font-size: 2rem;
+      color: white;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+      animation: spin-slow 20s infinite linear;
+    }
+
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .music-equalizer-big {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      margin-top: 0.1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .music-equalizer-big span {
+      display: inline-block;
+      width: 5px;
+      height: 20px;
+      background: linear-gradient(to top, #ffb3c6, rgba(255, 255, 255, 0.8));
+      border-radius: 10px;
+      animation: waveBig 1.5s ease infinite;
+      box-shadow: 0 0 10px rgba(255, 138, 161, 0.3);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .music-equalizer-big span:nth-child(1) { height: 14px; animation-delay: 0s; }
+    .music-equalizer-big span:nth-child(2) { height: 24px; animation-delay: 0.2s; }
+    .music-equalizer-big span:nth-child(3) { height: 30px; animation-delay: 0.4s; }
+    .music-equalizer-big span:nth-child(4) { height: 20px; animation-delay: 0.1s; }
+    .music-equalizer-big span:nth-child(5) { height: 16px; animation-delay: 0.3s; }
+
+    @keyframes waveBig {
+      0%, 100% { transform: scaleY(0.8); opacity: 0.7; }
+      50% { transform: scaleY(1.5); opacity: 1; }
+    }
+
+    .music-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* ========== MODAL ========== */
+    .modal-cosmic {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(20px);
+      z-index: 10000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .modal-cosmic.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .modal-content-cosmic {
+      background: rgba(18, 10, 14, 0.85);
+      backdrop-filter: blur(40px);
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      border-radius: 35px;
+      padding: 1.2rem;
+      max-width: 380px;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 150, 170, 0.3) inset;
+      animation: modalFadeIn 0.5s ease;
+    }
+
+    @keyframes modalFadeIn {
+      0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    
+    .modal-image-cosmic {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 77, 109, 0.25);
+      margin-bottom: 1rem;
+      background: #0a0608;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-image-cosmic img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+      display: block;
+      border-radius: 21px;
+    }
+    
+    .modal-caption-cosmic p {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-style: italic;
+      padding: 0.5rem 1.2rem;
+      background: rgba(255, 70, 110, 0.25);
+      border-radius: 40px;
+      border-left: 4px solid rgba(255, 77, 109, 0.7);
+      border-right: 4px solid rgba(255, 77, 109, 0.7);
+      margin-bottom: 0.6rem;
+      backdrop-filter: blur(15px);
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .modal-close-cosmic {
+      background: linear-gradient(145deg, rgba(255, 77, 109, 0.8), rgba(112, 16, 32, 0.8));
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 40px;
+      padding: 0.5rem 1.8rem;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 8px 25px rgba(255, 0, 50, 0.2);
+      letter-spacing: 2px;
+    }
+    .modal-close-cosmic:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, rgba(255, 77, 109, 0.9), rgba(95, 14, 28, 0.9));
+      box-shadow: 0 12px 30px rgba(255, 0, 50, 0.3);
+    }
+
+    /* ========== FLOATING HEARTS ========== */
+    .floating-heart-cosmic {
+      position: fixed;
+      color: rgba(255, 150, 170, 0.08);
+      font-size: 5rem;
+      z-index: 5;
+      animation: floatHeartCosmic 30s ease-in-out infinite;
+      pointer-events: none;
+      filter: blur(5px);
+    }
+    @keyframes floatHeartCosmic {
+      0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.08; }
+      25% { transform: translate(80px, -60px) rotate(20deg) scale(1.2); opacity: 0.12; }
+      50% { transform: translate(-50px, 70px) rotate(-15deg) scale(0.9); opacity: 0.1; }
+      75% { transform: translate(60px, 30px) rotate(15deg) scale(1.1); opacity: 0.12; }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @media (max-width: 768px) {
+      .cosmic-header h1 { font-size: 2.4rem; letter-spacing: 5px; }
+      .navbar-cosmic { flex-direction: column; gap: 0.8rem; padding: 1rem; }
+      .cloud-card { flex-direction: column !important; padding: 1.5rem; }
+      .photo-cloud { width: 100%; height: auto; aspect-ratio: 1/1; }
+      .cloud-card:nth-child(even) .badge-love { left: -12px; right: auto; }
+      .cloud-card:nth-child(even) .badge-crystal { right: -12px; left: auto; }
+      .music-foto-card { max-width: 100%; }
+      .modal-content-cosmic { max-width: 90%; padding: 1rem; }
+      .modal-image-cosmic { max-height: 180px; }
+      
+      /* Kurangi animasi di mobile */
+      .cloud-card {
+        animation-duration: 5s, 6s, 7s;
+      }
+    }
+
+    .closing-quote {
+      text-align: center;
+      margin: 2.5rem 0 2rem;
+    }
+  </style>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Cosmic Lembut -->
+  <div class="cosmic-bg">
+    <div class="stars"></div>
+    <div class="nebula"></div>
+  </div>
+
+  <!-- Floating Hearts Lembut -->
+  <i class="fas fa-heart floating-heart-cosmic" style="top: 3%; left: 2%; font-size: 6rem; animation-delay: 0s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="top: 12%; right: 3%; font-size: 5rem; animation-delay: 4s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="bottom: 6%; left: 5%; font-size: 7rem; animation-delay: 6s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="bottom: 14%; right: 6%; font-size: 4.5rem; animation-delay: 2.5s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="top: 35%; left: 10%; font-size: 5.5rem; animation-delay: 5s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="top: 65%; right: 12%; font-size: 6rem; animation-delay: 1.5s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="top: 22%; left: 22%; font-size: 4.8rem; animation-delay: 7s;"></i>
+  <i class="fas fa-heart floating-heart-cosmic" style="bottom: 28%; right: 18%; font-size: 5.8rem; animation-delay: 3s;"></i>
+
+  <!-- NAVBAR -->
+  <nav class="navbar-cosmic">
+    <div class="logo-cosmic">
+      <i class="fas fa-heart"></i>
+      <span>MY FINESHYT</span>
+    </div>
+    <a href="dashboard.html" class="back-btn-cosmic">
+      <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="cosmic-container">
+    
+    <!-- HEADER -->
+    <div class="cosmic-header">
+      <h1>Foto - Foto</h1>
+      <p>❤️ MY PRINCESS ❤️</p>
+    </div>
+
+    <!-- GALLERY - 10 FOTO DENGAN ANIMASI GERAK DI KOTAK -->
+    <div class="gallery-cloud" id="galleryCloud">
+      
+      <!-- FOTO 1 - Kiri -->
+      <div class="cloud-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" onclick="openCloudCard(this, 1, 'images/pto1.jpeg', 'cantik banget ya mita, hihi')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-star"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto1.jpeg" alt="Kenangan 1" onerror="this.src='https://via.placeholder.com/180x180/ffd0d9/ffffff?text=Miftha+1'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-1" class="caption-cloud"><div id="cloud-text-1" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-headphones-alt"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-1">128</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-1">45</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-1">23</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 2 - Kanan -->
+      <div class="cloud-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150" data-aos-once="true" onclick="openCloudCard(this, 2, 'images/pto2.jpeg', 'Mita tuh cantik, jadi jangan pernah bilang mita jelek yaawww')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-crown"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto2.jpeg" alt="Kenangan 2" onerror="this.src='https://via.placeholder.com/180x180/ffe0e5/ffffff?text=Miftha+2'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-2" class="caption-cloud"><div id="cloud-text-2" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-music"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-2">156</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-2">52</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-2">31</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 3 - Kiri -->
+      <div class="cloud-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" data-aos-once="true" onclick="openCloudCard(this, 3, 'images/pto3.jpeg', 'NO MAKE UP TETAP CANTIK, ASEKKK')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-gem"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto3.jpeg" alt="Kenangan 3" onerror="this.src='https://via.placeholder.com/180x180/ffd6dd/ffffff?text=Miftha+3'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-3" class="caption-cloud"><div id="cloud-text-3" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-headphones"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-3">189</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-3">67</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-3">42</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 4 - Kanan -->
+      <div class="cloud-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="250" data-aos-once="true" onclick="openCloudCard(this, 4, 'images/pto4.jpeg', 'malah kadang adit yang ngerasa insecure kalo liat mita cantik gini')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-sun"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto4.jpeg" alt="Kenangan 4" onerror="this.src='https://via.placeholder.com/180x180/ffe3e8/ffffff?text=Miftha+4'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-4" class="caption-cloud"><div id="cloud-text-4" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-headphones-alt"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-4">212</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-4">78</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-4">54</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 5 - Kiri -->
+      <div class="cloud-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300" data-aos-once="true" onclick="openCloudCard(this, 5, 'images/pto5.jpeg', 'malah sekarang adit yang bertanya tanya kenapa mita mau sama adit?')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-umbrella-beach"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto5.jpeg" alt="Kenangan 5" onerror="this.src='https://via.placeholder.com/180x180/ffeaee/ffffff?text=Miftha+5'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-5" class="caption-cloud"><div id="cloud-text-5" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-guitar"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-5">245</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-5">89</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-5">67</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 6 - Kanan -->
+      <div class="cloud-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="350" data-aos-once="true" onclick="openCloudCard(this, 6, 'images/pto6.jpeg', 'padahal adit tuh gada apa apanya sedangkan mita cantik iya, lucu iya, imut iya, baik iya')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-cake-candles"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto6.jpeg" alt="Kenangan 6" onerror="this.src='https://via.placeholder.com/180x180/fff0f2/ffffff?text=Miftha+6'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-6" class="caption-cloud"><div id="cloud-text-6" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-microphone"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-6">278</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-6">96</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-6">73</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 7 - Kiri -->
+      <div class="cloud-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400" data-aos-once="true" onclick="openCloudCard(this, 7, 'images/pto7.jpeg', 'akuu tuuhhh sayangggg bangettt sama mitaaaa')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-ring"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto7.jpeg" alt="Kenangan 7" onerror="this.src='https://via.placeholder.com/180x180/fff5f7/ffffff?text=Miftha+7'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-7" class="caption-cloud"><div id="cloud-text-7" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-headphones-alt"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-7">312</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-7">112</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-7">89</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 8 - Kanan -->
+      <div class="cloud-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="450" data-aos-once="true" onclick="openCloudCard(this, 8, 'images/pto8.jpeg', 'jadi jangan pernah bilang adit tuh ga sayang sama mita yaawww')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-champagne-glasses"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto8.jpeg" alt="Kenangan 8" onerror="this.src='https://via.placeholder.com/180x180/fff9fb/ffffff?text=Miftha+8'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-8" class="caption-cloud"><div id="cloud-text-8" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-music"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-8">356</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-8">134</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-8">98</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 9 - Kiri -->
+      <div class="cloud-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="500" data-aos-once="true" onclick="openCloudCard(this, 9, 'images/pto9.jpeg', 'hubungan bukan tentang berapa lama kita bersama, tapi tentang seberapa kuat kita bertahan')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-moon"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto9.jpeg" alt="Kenangan 9" onerror="this.src='https://via.placeholder.com/180x180/fffdfe/ffffff?text=Miftha+9'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-9" class="caption-cloud"><div id="cloud-text-9" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-guitar"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-9">189</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-9">67</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-9">45</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 10 - Kanan -->
+      <div class="cloud-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="550" data-aos-once="true" onclick="openCloudCard(this, 10, 'images/pto10.jpeg', 'Terima kasih telah menjadi alasan aku tersenyum setiap hari')">
+        <div class="badge-love"><i class="fas fa-heart"></i></div>
+        <div class="badge-crystal"><i class="fas fa-cloud-moon"></i></div>
+        <div class="photo-cloud">
+          <img src="images/pto10.jpeg" alt="Kenangan 10" onerror="this.src='https://via.placeholder.com/180x180/ffffff/ffffff?text=Miftha+10'">
+          <div class="hover-cloud"><i class="fas fa-heart"></i> Klik caption</div>
+        </div>
+        <div class="content-cloud">
+          <div id="cloud-caption-10" class="caption-cloud"><div id="cloud-text-10" class="caption-content"></div></div>
+          <div class="music-wrapper">
+            <div class="music-foto-card">
+              <div class="music-icon-big"><i class="fas fa-headphones"></i></div>
+              <div class="music-equalizer-big"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="reaction-cloud">
+            <div class="reaction-item"><i class="fas fa-heart"></i> <span id="cloud-love-10">234</span></div>
+            <div class="reaction-item"><i class="fas fa-comment"></i> <span id="cloud-comment-10">89</span></div>
+            <div class="reaction-item"><i class="fas fa-share"></i> <span id="cloud-share-10">56</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- QUOTE PENUTUP -->
+    <div class="closing-quote" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
+      <div style="display: inline-block; background: rgba(255, 90, 120, 0.1); backdrop-filter: blur(20px); padding: 1.5rem 3rem; border-radius: 80px; border: 1.5px solid rgba(255, 255, 255, 0.3); box-shadow: 0 0 50px rgba(255, 77, 109, 0.15);">
+        <i class="fas fa-heart" style="font-size: 2rem; color: #ffb3c6; text-shadow: 0 0 20px rgba(255, 77, 109, 0.3); margin-right: 12px;"></i>
+        <span style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: white; text-shadow: 0 0 25px rgba(255, 138, 161, 0.4);">Miftha Jannah Ramadhani</span>
+        <i class="fas fa-heart" style="font-size: 2rem; color: #ffb3c6; text-shadow: 0 0 20px rgba(255, 77, 109, 0.3); margin-left: 12px;"></i>
+      </div>
+      <p style="color: #ffd0d9; font-size: 1.2rem; margin-top: 1.5rem; font-style: italic; text-shadow: 0 0 15px rgba(255, 77, 109, 0.2); letter-spacing: 3px;">You are the reason I believe in forever</p>
+    </div>
+
+  </div>
+
+  <!-- MODAL COSMIC -->
+  <div id="modalCosmic" class="modal-cosmic" onclick="closeModalCosmic(event)">
+    <div class="modal-content-cosmic" onclick="event.stopPropagation()">
+      <div class="modal-image-cosmic">
+        <img id="modalImageCosmic" src="" alt="Foto Kenangan">
+      </div>
+      <div class="modal-caption-cosmic">
+        <p id="modalCaptionCosmic"></p>
+      </div>
+      <button class="modal-close-cosmic" onclick="closeModalCosmic(event)">
+        <i class="fas fa-heart"></i> Tutup <i class="fas fa-heart"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- FIXED ELEMENTS -->
+  <div style="position: fixed; bottom: 20px; right: 25px; z-index: 200;">
+    <div style="background: linear-gradient(145deg, rgba(255, 77, 109, 0.8), rgba(112, 16, 32, 0.8)); color: white; padding: 0.6rem 1.6rem; border-radius: 60px; border: 2px solid rgba(255, 255, 255, 0.8); font-weight: 600; font-size: 0.9rem; box-shadow: 0 8px 25px rgba(255, 0, 50, 0.2); animation: heartbeat 4s ease-in-out infinite; letter-spacing: 2px; backdrop-filter: blur(10px);">
+      <i class="fas fa-heart"></i> My Fineshyt
+    </div>
+  </div>
+  <div style="position: fixed; bottom: 20px; left: 25px; z-index: 200;">
+    <div style="background: rgba(200, 70, 100, 0.5); color: white; padding: 0.6rem 1.6rem; border-radius: 60px; backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.8); box-shadow: 0 8px 25px rgba(255, 0, 50, 0.15); font-size: 0.9rem; letter-spacing: 2px;">
+      <i class="fas fa-calendar-heart"></i> 14 February 2026
+    </div>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inisialisasi AOS untuk animasi scroll - ONCE SAJA
+    AOS.init({
+      once: true,
+      mirror: false,
+      duration: 800,
+      easing: 'ease-out-cubic',
+      offset: 100,
+      disable: false
+    });
+
+    function openCloudCard(card, id, imageSrc, captionText) {
+      const photo = card.querySelector('.photo-cloud');
+      photo.style.animation = 'none';
+      photo.offsetHeight;
+      photo.style.animation = 'photoClickPop 0.4s ease';
+      
+      const badgeLove = card.querySelector('.badge-love i');
+      const badgeCrystal = card.querySelector('.badge-crystal i');
+      if (badgeLove) {
+        badgeLove.style.animation = 'none';
+        badgeLove.offsetHeight;
+        badgeLove.style.animation = 'badgeClick 0.6s ease';
+      }
+      if (badgeCrystal) {
+        badgeCrystal.style.animation = 'none';
+        badgeCrystal.offsetHeight;
+        badgeCrystal.style.animation = 'badgeClick 0.6s ease';
+      }
+      
+      ['love','comment','share'].forEach(type => {
+        const span = document.getElementById(`cloud-${type}-${id}`);
+        if (span) {
+          span.style.animation = 'numberPop 0.3s ease';
+          setTimeout(() => span.style.animation = '', 300);
+        }
+      });
+      
+      const captionDiv = document.getElementById(`cloud-caption-${id}`);
+      const captionContent = document.getElementById(`cloud-text-${id}`);
+      captionContent.innerHTML = '';
+      captionDiv.classList.add('active');
+      typeCaptionNumber(captionContent, captionText, 0);
+      
+      openModalCosmic(imageSrc, captionText);
+    }
+
+    function typeCaptionNumber(element, text, index) {
+      if (index < text.length) {
+        element.innerHTML = text.substring(0, index + 1) + (index < text.length - 1 ? '<span class="typing-cursor">|</span>' : '');
+        setTimeout(() => { typeCaptionNumber(element, text, index + 1); }, 45);
+      } else {
+        element.innerHTML = text;
+      }
+    }
+
+    function openModalCosmic(imageSrc, caption) {
+      const modal = document.getElementById('modalCosmic');
+      const modalImage = document.getElementById('modalImageCosmic');
+      modalImage.src = imageSrc;
+      document.getElementById('modalCaptionCosmic').textContent = `"${caption}"`;
+      
+      modalImage.style.objectFit = 'contain';
+      modalImage.style.width = '100%';
+      modalImage.style.height = 'auto';
+      modalImage.style.maxHeight = '200px';
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModalCosmic(event) {
+      const modal = document.getElementById('modalCosmic');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      for (let i = 1; i <= 10; i++) {
+        const captionDiv = document.getElementById(`cloud-caption-${i}`);
+        const captionContent = document.getElementById(`cloud-text-${i}`);
+        if (captionDiv) {
+          captionDiv.classList.remove('active');
+          if (captionContent) captionContent.innerHTML = '';
+        }
+      }
+    }
+
+    window.onload = function() {
+      for (let i = 1; i <= 10; i++) {
+        const captionDiv = document.getElementById(`cloud-caption-${i}`);
+        const captionContent = document.getElementById(`cloud-text-${i}`);
+        if (captionDiv) {
+          captionDiv.classList.remove('active');
+          if (captionContent) captionContent.innerHTML = '';
+        }
+      }
+      console.log('✨ Galeri Cinta Premium - Animasi Gerak di Kotak! ✨');
+    };
+  </script>
+</body>
+</html>

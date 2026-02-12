@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miftha Jannah Ramadhani • Valentine Special</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 0% 0%, #ffd9e6, #ffb3c6, #ff8c9e);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* EFEK GLOW MEGAH */
+    .orb-pink-1 {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      background: rgba(255, 120, 140, 0.2);
+      border-radius: 50%;
+      filter: blur(150px);
+      top: -300px;
+      right: -200px;
+      z-index: 0;
+      animation: float-slow 20s ease-in-out infinite;
+    }
+
+    .orb-pink-2 {
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: rgba(255, 80, 120, 0.15);
+      border-radius: 50%;
+      filter: blur(140px);
+      bottom: -250px;
+      left: -150px;
+      z-index: 0;
+      animation: float-slow 18s ease-in-out infinite reverse;
+    }
+
+    .orb-pink-3 {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 150, 170, 0.1);
+      border-radius: 50%;
+      filter: blur(130px);
+      top: 40%;
+      right: 10%;
+      z-index: 0;
+      animation: float-slow 22s ease-in-out infinite;
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 30px) scale(1.1); }
+    }
+
+    /* ANIMASI MASUK SUPER MEGAH */
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInFromTop {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInFromBottom {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInFromLeft {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInFromRight {
+      0% { opacity: 0; transform: translateX(50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      80% { transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes heartFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.1); }
+    }
+
+    /* NAVBAR SUPER MEWAH */
+    .navbar {
+      background: rgba(255, 230, 240, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+      box-shadow: 0 15px 45px rgba(255, 70, 110, 0.3);
+      animation: slideInFromTop 1s ease-out;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo i {
+      font-size: 2.5rem;
+      color: #ff1a4f;
+      text-shadow: 0 0 20px #ff4d6d, 0 0 40px #ff8aa1, 0 0 60px #ffb6c1;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    .logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #a12244, #d43b5c, #ff6b8b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px rgba(255, 100, 130, 0.3);
+    }
+
+    /* NAVIGATION MENU - SIMPLE & ELEGAN */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #831e3a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(5px);
+      transition: 0.3s;
+    }
+
+    .nav-item i {
+      font-size: 1.2rem;
+      color: #ff3355;
+    }
+
+    .nav-item:hover {
+      background: linear-gradient(145deg, #ff4d6d, #ff1a4f);
+      color: white;
+      transform: translateY(-5px);
+      border-color: white;
+      box-shadow: 0 10px 25px rgba(255, 50, 80, 0.5);
+    }
+
+    .nav-item:hover i {
+      color: white;
+    }
+
+    .nav-item.active {
+      background: linear-gradient(145deg, #ff4d6d, #c1354d);
+      color: white;
+      border-color: white;
+      box-shadow: 0 10px 25px rgba(255, 30, 70, 0.6);
+    }
+
+    .nav-item.active i {
+      color: white;
+    }
+
+    /* MY FINESHYT - SPECIAL STYLE */
+    .nav-item.fineshyt {
+      background: linear-gradient(145deg, #ff6b8b, #ff4d6d);
+      border-color: white;
+      box-shadow: 0 0 20px rgba(255, 30, 70, 0.5);
+    }
+
+    .nav-item.fineshyt i {
+      color: white;
+      text-shadow: 0 0 10px white;
+    }
+
+    .logout-btn {
+      background: linear-gradient(145deg, #ff4d6d, #c1354d);
+      border: none;
+      border-radius: 40px;
+      padding: 0.7rem 2rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 25px rgba(255, 50, 80, 0.5);
+    }
+
+    .logout-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(255, 30, 70, 0.7);
+      background: linear-gradient(145deg, #ff3355, #a5203a);
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      position: relative;
+      z-index: 50;
+      min-height: 100vh;
+      animation: fadeInScale 1.2s ease-out;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 2.5rem auto;
+      padding: 0 2.5rem;
+    }
+
+    /* WELCOME SECTION */
+    .welcome-section {
+      background: linear-gradient(145deg, rgba(255, 220, 230, 0.85), rgba(255, 200, 215, 0.8));
+      backdrop-filter: blur(15px);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      border-radius: 60px;
+      padding: 2.8rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 30px 60px rgba(255, 60, 100, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      animation: slideInFromBottom 0.8s ease-out;
+    }
+
+    .welcome-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .welcome-icon {
+      font-size: 5rem;
+      color: #ff1a4f;
+      text-shadow: 0 0 30px #ff4d6d, 0 0 60px #ff8aa1, 0 0 90px white;
+      animation: heartbeat 1.8s ease-in-out infinite;
+      position: relative;
+      z-index: 10;
+    }
+
+    .welcome-text {
+      position: relative;
+      z-index: 10;
+    }
+
+    .welcome-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #9f1e3f, #d43b5c, #ff6b8b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      letter-spacing: 3px;
+      animation: slideInFromLeft 0.8s ease-out;
+    }
+
+    .welcome-text p {
+      color: #63162c;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-shadow: 0 2px 10px rgba(255, 200, 210, 0.8);
+      animation: slideInFromRight 0.8s ease-out;
+    }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: rgba(255, 235, 240, 0.8);
+      backdrop-filter: blur(15px);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 40px;
+      padding: 2.5rem 2rem;
+      transition: 0.4s;
+      box-shadow: 0 20px 40px rgba(255, 70, 110, 0.25);
+      animation: popIn 0.8s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card:hover {
+      transform: translateY(-20px) scale(1.03);
+      box-shadow: 0 40px 80px rgba(255, 40, 80, 0.5), 0 0 0 4px rgba(255, 255, 255, 0.95) inset;
+    }
+
+    .card-icon {
+      font-size: 3.5rem;
+      color: #ff1a4f;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 25px #ff4d6d, 0 0 50px #ff8aa1;
+      animation: float-icon 3s ease-in-out infinite;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #a51e41;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #4e1423;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* LOVE COUNTER */
+    .love-counter {
+      background: linear-gradient(145deg, rgba(255, 210, 220, 0.85), rgba(255, 180, 200, 0.8));
+      backdrop-filter: blur(15px);
+      border: 3px solid rgba(255, 255, 255, 0.95);
+      border-radius: 60px;
+      padding: 2.5rem;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+      animation: slideInFromBottom 0.8s ease-out;
+      animation-delay: 0.8s;
+      animation-fill-mode: both;
+    }
+
+    .counter-item {
+      text-align: center;
+      animation: popIn 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .counter-item:nth-child(1) { animation-delay: 1s; }
+    .counter-item:nth-child(2) { animation-delay: 1.2s; }
+    .counter-item:nth-child(3) { animation-delay: 1.4s; }
+
+    .counter-item i {
+      font-size: 3rem;
+      color: #ff1a4f;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 25px #ff4d6d, 0 0 50px #ff8aa1;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+
+    .counter-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #a51e41, #d43b5c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .counter-label {
+      color: #4a1020;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* FLOATING HEARTS */
+    .floating-heart {
+      position: fixed;
+      color: rgba(255, 80, 120, 0.12);
+      font-size: 3.5rem;
+      z-index: 10;
+      animation: heartFloat 15s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    /* GLITTER EFFECT */
+    .glitter {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 15px white, 0 0 30px rgba(255, 200, 210, 0.8);
+      opacity: 0.6;
+      animation: twinkle 3s ease-in-out infinite;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.8); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .navbar { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+      .nav-menu { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 700px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .welcome-section { flex-direction: column; text-align: center; }
+      .love-counter { flex-direction: column; gap: 2rem; }
+      .logo span { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Glow Megah -->
+  <div class="orb-pink-1"></div>
+  <div class="orb-pink-2"></div>
+  <div class="orb-pink-3"></div>
+
+  <!-- Floating Hearts Romantis -->
+  <i class="fas fa-heart floating-heart" style="top: 10%; left: 5%; font-size: 4rem; color: rgba(255,80,120,0.1); animation-delay: 0s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 20%; right: 8%; font-size: 3.5rem; color: rgba(255,100,130,0.1); animation-delay: 2s;"></i>
+  <i class="fas fa-heart floating-heart" style="bottom: 15%; left: 12%; font-size: 5rem; color: rgba(255,70,110,0.08); animation-delay: 4s;"></i>
+  <i class="fas fa-heart floating-heart" style="bottom: 25%; right: 15%; font-size: 3rem; color: rgba(255,90,120,0.1); animation-delay: 1s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 60%; left: 8%; font-size: 4.5rem; color: rgba(255,110,140,0.08); animation-delay: 3s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 75%; right: 12%; font-size: 3.8rem; color: rgba(255,85,115,0.1); animation-delay: 5s;"></i>
+
+  <!-- NAVBAR MEWAH - HANYA 3 MENU UTAMA -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-heart"></i>
+      <span>Miftha Jannah Ramadhani</span>
+    </div>
+    
+    <!-- MENU NAVIGASI SEDERHANA - HANYA 3 -->
+    <div class="nav-menu">
+      <a href="dashboard.html" class="nav-item active">
+        <i class="fas fa-home"></i> Utama
+      </a>
+      <a href="kenangan.html" class="nav-item">
+        <i class="fas fa-heart"></i> Kenangan
+      </a>
+      <a href="my_fineshyt.html" class="nav-item fineshyt">
+        <i class="fas fa-crown"></i> My Fineshyt
+      </a>
+      <button class="logout-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT DENGAN ANIMASI -->
+  <div class="main-content">
+    <div class="container">
+      <!-- WELCOME SECTION -->
+      <div class="welcome-section">
+        <div class="welcome-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="welcome-text">
+          <h2>Selamat Hari Valentine Sayanggg! ❤️</h2>
+          <p>Aku sengaja buat ini dari jauh-jauh hari untuk mita yang ku sayanggg</p>
+        </div>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Love Notes</h3>
+          <p>"Caraku memberitahu dunia kalau aku sayang sama mita adalah berbisik di telingamu. Karena mita adalah duniaku"</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Special Moments</h3>
+          <p>Setiap detik bersamamu adalah hadiah terindah yang pernah aku miliki. mita alasan aku tersenyum setiap hari.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <h3>Quotes</h3>
+          <p>mita adalah orang yang paling berharga dalam hidupku. I love you more than anything! ❤️</p>
+        </div>
+      </div>
+
+      <!-- LOVE COUNTER -->
+      <div class="love-counter">
+        <div class="counter-item">
+          <i class="fas fa-heart"></i>
+          <div class="counter-number">∞</div>
+          <div class="counter-label">Sayang</div>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-smile"></i>
+          <div class="counter-number">10<sup>6</sup>+</div>
+          <div class="counter-label">Senyumanmu</div>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-infinity"></i>
+          <div class="counter-number">Forever</div>
+          <div class="counter-label">Bersama</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEKS SPESIAL DI POJOK -->
+  <div style="position: fixed; bottom: 30px; right: 40px; color: white; background: linear-gradient(145deg, #ff4d6d, #c1354d); padding: 0.8rem 2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 2px solid white; font-weight: 600; z-index: 200; box-shadow: 0 10px 30px rgba(255, 0, 50, 0.5); animation: popIn 1s ease-out 1.6s both;">
+    <i class="fas fa-heart"></i> For My Fineshyt MITA <i class="fas fa-heart"></i>
+  </div>
+
+  <div style="position: fixed; bottom: 30px; left: 40px; color: white; background: rgba(255, 80, 120, 0.8); padding: 0.7rem 2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 2px solid white; font-weight: 500; z-index: 200; box-shadow: 0 10px 30px rgba(255, 0, 50, 0.4); animation: popIn 1s ease-out 1.8s both;">
+    <i class="fas fa-calendar-heart"></i> 14 February 2026 • Valentine Day
+  </div>
+
+  <script>
+    // CREATE GLITTER EFFECT
+    function createGlitter() {
+      for (let i = 0; i < 40; i++) {
+        let glitter = document.createElement('div');
+        glitter.classList.add('glitter');
+        glitter.style.top = Math.random() * 100 + '%';
+        glitter.style.left = Math.random() * 100 + '%';
+        glitter.style.animationDelay = Math.random() * 5 + 's';
+        glitter.style.width = Math.random() * 6 + 2 + 'px';
+        glitter.style.height = glitter.style.width;
+        document.body.appendChild(glitter);
+      }
+    }
+    
+    window.onload = function() {
+      createGlitter();
+    };
+  </script>
+</body>
+</html>

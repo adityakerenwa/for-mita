@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Aplikasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logout-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logout-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-home {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+
+        .countdown {
+            margin-top: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <!-- Loading spinner (muncul saat proses logout) -->
+        <div class="loading-spinner" id="loadingSpinner"></div>
+        
+        <!-- Icon Logout -->
+        <div class="logout-icon">👋</div>
+        
+        <h1 id="statusTitle">Logout Berhasil!</h1>
+        
+        <p id="statusMessage">
+            Anda telah berhasil keluar dari sistem.<br>
+            Terima kasih telah menggunakan aplikasi kami.
+        </p>
+        
+        <!-- Tombol-tombol -->
+        <div>
+            <a href="login.html" class="btn btn-login" id="loginBtn">
+                Login Kembali
+            </a>
+            <a href="index.html" class="btn btn-home" id="homeBtn">
+                Halaman Utama
+            </a>
+        </div>
+        
+        <!-- Countdown redirect -->
+        <div class="countdown" id="countdown">
+            Dialihkan ke halaman login dalam <span id="timer">5</span> detik...
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk membersihkan data session/login
+        function performLogout() {
+            return new Promise((resolve) => {
+                // Tampilkan loading
+                document.getElementById('loadingSpinner').style.display = 'block';
+                document.getElementById('statusTitle').style.opacity = '0.5';
+                document.getElementById('statusMessage').style.opacity = '0.5';
+                
+                // Simulasi proses logout
+                setTimeout(() => {
+                    // Hapus data dari localStorage
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('userData');
+                    
+                    // Hapus data dari sessionStorage
+                    sessionStorage.clear();
+                    
+                    // Hapus cookies
+                    document.cookie.split(";").forEach(function(c) {
+                        document.cookie = c.replace(/^ +/, "")
+                            .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+                    });
+                    
+                    // Sembunyikan loading
+                    document.getElementById('loadingSpinner').style.display = 'none';
+                    document.getElementById('statusTitle').style.opacity = '1';
+                    document.getElementById('statusMessage').style.opacity = '1';
+                    
+                    resolve();
+                }, 1500); // Delay 1.5 detik untuk simulasi proses
+            });
+        }
+
+        // Fungsi untuk redirect dengan countdown
+        function startCountdown(seconds) {
+            const timerElement = document.getElementById('timer');
+            const countdownElement = document.getElementById('countdown');
+            
+            let timeLeft = seconds;
+            
+            const countdownInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = 'login.html';
+                }
+            }, 1000);
+        }
+
+        // Fungsi untuk cek status login
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const token = localStorage.getItem('token');
+            
+            if (!isLoggedIn && !token) {
+                // Update tampilan untuk user yang sudah logout
+                document.getElementById('statusTitle').textContent = 'Anda Sudah Logout';
+                document.getElementById('statusMessage').innerHTML = 
+                    'Sesi Anda telah berakhir. Silakan login kembali untuk mengakses akun Anda.';
+            }
+        }
+
+        // Event listener untuk tombol logout manual
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Cek status login
+            checkLoginStatus();
+            
+            // Jalankan proses logout
+            await performLogout();
+            
+            // Mulai countdown
+            startCountdown(5);
+        });
+
+        // Prevent user dari back button setelah logout
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function() {
+            window.history.go(1);
+        };
+
+        // Konfirmasi sebelum logout (opsional)
+        window.onbeforeunload = function() {
+            // Tidak menampilkan konfirmasi jika sudah di halaman logout
+            if (window.location.pathname.includes('logout.html')) {
+                return null;
+            }
+        };
+
+        // Fungsi tambahan: Clear semua data
+        function clearAllData() {
+            // IndexedDB
+            if (window.indexedDB) {
+                indexedDB.databases().then((databases) => {
+                    databases.forEach((db) => {
+                        indexedDB.deleteDatabase(db.name);
+                    });
+                });
+            }
+            
+            // Cache storage
+            if ('caches' in window) {
+                caches.keys().then((names) => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                    });
+                });
+            }
+            
+            console.log('Semua data telah dibersihkan');
+        }
+
+        // Panggil fungsi clear data (opsional)
+        // clearAllData();
+    </script>
+
+    <!-- Versi alternatif untuk halaman logout dengan parameter -->
+    <script>
+        // Parsing URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const message = urlParams.get('message');
+        
+        if (status === 'expired') {
+            document.getElementById('statusTitle').textContent = 'Sesi Berakhir';
+            document.getElementById('statusMessage').innerHTML = 
+                'Sesi Anda telah habis. Silakan login kembali untuk melanjutkan.';
+        } else if (status === 'error') {
+            document.getElementById('statusTitle').textContent = 'Logout Gagal?';
+            document.getElementById('statusMessage').innerHTML = 
+                message || 'Terjadi kesalahan, namun Anda tetap aman untuk keluar.';
+        }
+    </script>
+</body>
+</html>

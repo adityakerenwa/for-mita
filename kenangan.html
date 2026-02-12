@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenangan • Miftha Jannah Ramadhani</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #1a0b10, #2d121b, #4d1a2a);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Efek Glow Misterius & Romantis */
+    .orb-rose-1 {
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: rgba(200, 80, 120, 0.12);
+      border-radius: 50%;
+      filter: blur(140px);
+      top: -200px;
+      left: -200px;
+      z-index: 0;
+      animation: float-glow 25s ease-in-out infinite;
+    }
+
+    .orb-rose-2 {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: rgba(150, 50, 90, 0.1);
+      border-radius: 50%;
+      filter: blur(130px);
+      bottom: -150px;
+      right: -150px;
+      z-index: 0;
+      animation: float-glow 22s ease-in-out infinite reverse;
+    }
+
+    .orb-rose-3 {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(220, 100, 140, 0.08);
+      border-radius: 50%;
+      filter: blur(120px);
+      top: 40%;
+      right: 30%;
+      z-index: 0;
+      animation: float-glow 28s ease-in-out infinite;
+    }
+
+    @keyframes float-glow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, 40px) scale(1.2); }
+    }
+
+    /* NAVBAR KENANGAN */
+    .navbar-kenangan {
+      background: rgba(30, 10, 18, 0.75);
+      backdrop-filter: blur(20px);
+      border-bottom: 2px solid rgba(255, 130, 160, 0.5);
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-kenangan {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-kenangan i {
+      font-size: 2.2rem;
+      color: #ff8aa1;
+      text-shadow: 0 0 20px #ff4d6d, 0 0 40px #c1354d;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+
+    .logo-kenangan span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffb6c1, #ff8aa1, #ff4d6d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 3px;
+    }
+
+    .back-btn {
+      background: rgba(255, 75, 100, 0.3);
+      border: 2px solid rgba(255, 150, 170, 0.8);
+      border-radius: 40px;
+      padding: 0.7rem 2rem;
+      color: white;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      backdrop-filter: blur(5px);
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 60, 100, 0.7);
+      border-color: white;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 80, 120, 0.6);
+    }
+
+    /* CONTAINER KENANGAN */
+    .kenangan-container {
+      max-width: 1400px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 50;
+    }
+
+    /* HEADER KENANGAN */
+    .kenangan-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .kenangan-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffc0cb, #ff8aa1, #ff4d6d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(255, 80, 120, 0.5);
+      margin-bottom: 0.5rem;
+      letter-spacing: 8px;
+      animation: titleGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 30px rgba(255, 80, 120, 0.5); }
+      50% { text-shadow: 0 0 60px rgba(255, 80, 120, 0.8), 0 0 90px #ff4d6d; }
+    }
+
+    .kenangan-header p {
+      color: #ffb6c1;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #ff4d6d;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff8aa1; }
+    }
+
+    /* GALLERY GRID - LEMBARAN FOTO */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    /* POLAROID STYLE - LEMBARAN FOTO KEREN */
+    .photo-frame {
+      background: rgba(255, 240, 245, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px 20px 20px 20px;
+      padding: 1.5rem 1.5rem 2rem 1.5rem;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 200, 210, 0.8) inset, 0 0 30px rgba(255, 80, 120, 0.5);
+      transform: rotate(var(--rotate, 0deg));
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+    }
+
+    .photo-frame:nth-child(odd) {
+      --rotate: -2deg;
+    }
+
+    .photo-frame:nth-child(even) {
+      --rotate: 3deg;
+    }
+
+    .photo-frame:nth-child(3n) {
+      --rotate: 1.5deg;
+    }
+
+    .photo-frame:nth-child(5n) {
+      --rotate: -1.8deg;
+    }
+
+    .photo-frame:hover {
+      transform: rotate(0deg) scale(1.08);
+      box-shadow: 0 40px 70px rgba(255, 40, 80, 0.7), 0 0 0 4px rgba(255, 255, 255, 0.9) inset, 0 0 60px #ff8aa1;
+      z-index: 100;
+    }
+
+    /* PHOTO CONTAINER */
+    .photo-image {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(145deg, #2d1a1f, #1e0f13);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .photo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-frame:hover .photo-image img {
+      transform: scale(1.1);
+    }
+
+    /* CAPTION - LEBIH PERSONAL DAN SANTAI */
+    .photo-caption {
+      margin-top: 1.5rem;
+      text-align: center;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-caption p {
+      color: #4a1020;
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.6;
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      border-left: 4px solid #ff4d6d;
+      border-right: 4px solid #ff4d6d;
+      box-shadow: 0 5px 15px rgba(255, 0, 50, 0.1);
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .photo-frame:hover .photo-caption p {
+      background: rgba(255, 255, 255, 0.5);
+      border-left-color: #ff1a4f;
+      border-right-color: #ff1a4f;
+      box-shadow: 0 5px 20px rgba(255, 0, 50, 0.3);
+      transform: scale(1.02);
+    }
+
+    /* LOVE STICKER */
+    .love-sticker {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(145deg, #ff4d6d, #c1354d);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid white;
+      box-shadow: 0 5px 20px rgba(255, 0, 50, 0.7);
+      animation: heartbeat 2s ease-in-out infinite;
+      z-index: 200;
+    }
+
+    .love-sticker i {
+      color: white;
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px white;
+    }
+
+    /* ========== MODAL VIEWER - FOTO TAMPIL BESAR ========== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    @keyframes modalBloom {
+      0% {
+        transform: scale(0.6) rotate(-8deg);
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(255, 75, 100, 0);
+      }
+      60% {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 0 60px rgba(255, 75, 100, 0.7);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(255, 150, 170, 0.5) inset;
+      }
+    }
+
+    .modal-content {
+      background: rgba(20, 5, 10, 0.85);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 35px;
+      padding: 1.8rem;
+      max-width: 550px;
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(255, 150, 170, 0.5) inset;
+      animation: modalBloom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes imageReveal {
+      0% { opacity: 0; transform: scale(0.8) translateY(15px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-image-container {
+      width: 100%;
+      max-height: 350px;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 4px solid white;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+      margin-bottom: 1.5rem;
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: imageReveal 0.5s ease 0.1s both;
+    }
+
+    .modal-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #0a0a0a;
+    }
+
+    @keyframes captionSlide {
+      0% { opacity: 0; transform: translateX(-15px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .modal-caption {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      animation: captionSlide 0.4s ease 0.2s both;
+    }
+
+    .modal-caption p {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.6;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 75, 100, 0.3);
+      border-radius: 50px;
+      border-left: 4px solid #ff4d6d;
+      border-right: 4px solid #ff4d6d;
+      display: inline-block;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 20px rgba(255, 0, 50, 0.2);
+    }
+
+    @keyframes buttonPop {
+      0% { transform: scale(0); }
+      80% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .modal-close {
+      background: linear-gradient(145deg, #ff4d6d, #c1354d);
+      border: 2px solid white;
+      border-radius: 60px;
+      padding: 0.7rem 2.2rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(255, 0, 50, 0.5);
+      animation: buttonPop 0.4s ease 0.3s both;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.08);
+      background: linear-gradient(145deg, #ff3355, #a5203a);
+      box-shadow: 0 15px 35px rgba(255, 0, 50, 0.8);
+    }
+
+    .modal-close i {
+      font-size: 1.1rem;
+    }
+
+    .modal-hearts {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: rgba(255, 100, 130, 0.4);
+      font-size: 2rem;
+      animation: floatHeart 3s ease-in-out infinite;
+    }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(8deg); }
+    }
+
+    /* QUOTE SECTION */
+    .quote-section {
+      background: rgba(30, 10, 18, 0.7);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 130, 160, 0.6);
+      border-radius: 80px;
+      padding: 3rem;
+      margin: 4rem 0;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 200, 210, 0.3) inset;
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 200, 210, 0.3) inset; }
+      50% { box-shadow: 0 40px 80px rgba(255, 60, 100, 0.4), 0 0 0 4px rgba(255, 200, 210, 0.5) inset; }
+    }
+
+    .quote-section i {
+      font-size: 3rem;
+      color: #ff8aa1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 30px #ff4d6d;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+
+    .quote-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px #ff8aa1;
+    }
+
+    .quote-section p {
+      color: #ffb6c1;
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* FLOATING HEARTS */
+    .floating-heart {
+      position: fixed;
+      color: rgba(255, 80, 120, 0.1);
+      font-size: 4rem;
+      z-index: 10;
+      animation: float-around 20s ease-in-out infinite;
+    }
+
+    @keyframes float-around {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(50px, -30px) rotate(15deg); }
+      66% { transform: translate(-30px, 40px) rotate(-10deg); }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ANIMASI FOTO MASUK */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .photo-frame {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .kenangan-header h1 { font-size: 2.8rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .navbar-kenangan { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+      .photo-image { height: 220px; }
+      .photo-caption p { font-size: 1rem; }
+      .modal-content { max-width: 450px; padding: 1.5rem; }
+      .modal-image-container { max-height: 280px; }
+      .modal-caption p { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Glow Romantis -->
+  <div class="orb-rose-1"></div>
+  <div class="orb-rose-2"></div>
+  <div class="orb-rose-3"></div>
+
+  <!-- Floating Hearts -->
+  <i class="fas fa-heart floating-heart" style="top: 10%; left: 5%; font-size: 5rem; color: rgba(255,80,120,0.05); animation-delay: 0s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 20%; right: 8%; font-size: 4rem; color: rgba(255,100,130,0.06); animation-delay: 3s;"></i>
+  <i class="fas fa-heart floating-heart" style="bottom: 15%; left: 12%; font-size: 6rem; color: rgba(255,70,110,0.04); animation-delay: 5s;"></i>
+  <i class="fas fa-heart floating-heart" style="bottom: 30%; right: 15%; font-size: 3.5rem; color: rgba(255,90,120,0.05); animation-delay: 2s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 50%; left: 20%; font-size: 4.2rem; color: rgba(255,80,120,0.06); animation-delay: 4s;"></i>
+  <i class="fas fa-heart floating-heart" style="top: 80%; right: 10%; font-size: 3.8rem; color: rgba(255,100,130,0.05); animation-delay: 1s;"></i>
+
+  <!-- NAVBAR KENANGAN -->
+  <nav class="navbar-kenangan">
+    <div class="logo-kenangan">
+      <i class="fas fa-heart"></i>
+      <span>Kenangan Kita</span>
+    </div>
+    <a href="dashboard.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Kembali Ke Utama
+    </a>
+  </nav>
+
+  <!-- MAIN CONTENT KENANGAN -->
+  <div class="kenangan-container">
+    
+    <!-- HEADER -->
+    <div class="kenangan-header">
+      <h1>OUR MEMORIES</h1>
+      <p>❤️ Setiap foto adalah cerita cinta kita ❤️</p>
+    </div>
+
+    <!-- GALLERY FOTO - CAPTION SAMA DENGAN MODAL -->
+    <div class="gallery-grid" id="gallery-grid">
+      
+      <!-- FOTO 1 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/poto1.png', 'DAY 1, ada yang ngajak photobooth, wkwkw')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/poto1.png" alt="Kenangan 1" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"DAY 1, ada yang ngajak photobooth, wkwkw"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 2 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/poto2.png', 'tiba-tiba seisi kelas pada bilang, oh itu fungsi hoodi cowo, wkwk')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/poto2.png" alt="Kenangan 2" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"tiba-tiba seisi kelas pada bilang, oh itu fungsi hoodi cowo, wkwk"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 3 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/crf.jpeg', 'diliat-liat adit ganteng jugaa, yang moto juga cantik, banged malahan')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/crf.jpeg" alt="Kenangan 3" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"diliat-liat adit ganteng jugaa, yang moto juga cantik, banged malahan"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 4 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/mln.jpeg', 'WELL, difotoin my fine shyt')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/mln.jpeg" alt="Kenangan 4" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"WELL, difotoin my fine shyt"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 5 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/pprzi.jpeg', 'jadi kangen ke bantin bareng')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/pprzi.jpeg" alt="Kenangan 5" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"jadi kangen ke bantin bareng"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 6 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/wi.png', 'moment paling seru bareng mita, seharian diluar sampai tersesat')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/wi.png" alt="Kenangan 6" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"moment paling seru bareng mita, seharian diluar sampai tersesat"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 7 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/cp.jpeg', 'akhirnya dulu senang kali bisa couple')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/cp.jpeg" alt="Kenangan 7" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"akhirnya dulu senang kali bisa couple"</p>
+        </div>
+      </div>
+
+      <!-- FOTO 8 - CAPTION SAMA -->
+      <div class="photo-frame" onclick="openModal('images/trnd.png', 'Lucu yah kita, bisa buat-buat trend gini, hihi')">
+        <div class="love-sticker">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="photo-image">
+          <img src="images/trnd.png" alt="Kenangan 8" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x280?text=Foto+Tidak+Ditemukan'">
+        </div>
+        <div class="photo-caption">
+          <p>"Lucu yah kita, bisa buat-buat trend gini, hihi"</p>
+        </div>
+      </div>
+
+    </div> <!-- END GALLERY GRID -->
+
+    <!-- QUOTE ROMANTIS -->
+    <div class="quote-section">
+      <i class="fas fa-heart"></i>
+      <h2>Untuk Miftha Jannah Ramadhani</h2>
+      <p>"Setiap foto adalah bukti bahwa aku memilihmu,<br>dan akan terus memilihmu, hari ini, esok, dan selamanya."</p>
+      <p style="margin-top: 2rem; font-size: 1.5rem;">❤️ I Love You More Than Anything ❤️</p>
+    </div>
+
+    <!-- TIMELINE LOVE -->
+    <div style="text-align: center; margin: 3rem 0; color: white;">
+      <i class="fas fa-infinity" style="font-size: 3rem; color: #ff8aa1; text-shadow: 0 0 30px #ff4d6d; animation: heartbeat 3s ease-in-out infinite;"></i>
+      <p style="font-size: 1.2rem; color: #ffb6c1; margin-top: 1rem;">Our story continues forever...</p>
+    </div>
+
+  </div> <!-- END CONTAINER -->
+
+  <!-- ========== MODAL VIEWER ========== -->
+  <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-hearts">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="modal-image-container" id="modalImageContainer">
+        <img id="modalImage" src="" alt="Foto Kenangan">
+      </div>
+      <div class="modal-caption" id="modalCaption">
+        <p id="modalCaptionText"></p>
+      </div>
+      <button class="modal-close" onclick="closeModal(event)">
+        <i class="fas fa-heart"></i> Tutup <i class="fas fa-heart"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="position: fixed; bottom: 30px; right: 40px; z-index: 200;">
+    <div style="background: rgba(255, 60, 100, 0.8); color: white; padding: 0.8rem 2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 2px solid white; font-weight: 600; box-shadow: 0 10px 30px rgba(255, 0, 50, 0.5); animation: heartbeat 3s ease-in-out infinite;">
+      <i class="fas fa-heart"></i> My Fineshyt <i class="fas fa-heart"></i>
+    </div>
+  </div>
+
+  <div style="position: fixed; bottom: 30px; left: 40px; z-index: 200;">
+    <div style="background: rgba(200, 70, 100, 0.7); color: white; padding: 0.8rem 2rem; border-radius: 50px; backdrop-filter: blur(10px); border: 2px solid white;">
+      <i class="fas fa-calendar-heart"></i> 14 February 2026
+    </div>
+  </div>
+
+  <script>
+    // ============ FUNGSI MODAL ============
+    function openModal(imageSrc, caption) {
+      const modal = document.getElementById('modalOverlay');
+      const modalImage = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaptionText');
+      
+      modalImage.src = imageSrc;
+      modalCaption.textContent = `"${caption}"`; // CAPTION SAMA PERSIS DENGAN YANG DI FRAME
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event) {
+      const modal = document.getElementById('modalOverlay');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Animasi foto
+    window.onload = function() {
+      document.querySelectorAll('.photo-frame').forEach((frame, index) => {
+        frame.style.animationDelay = `${index * 0.15}s`;
+      });
+      
+      // Cek apakah foto berhasil dimuat
+      const images = document.querySelectorAll('.photo-image img');
+      images.forEach((img, index) => {
+        img.onerror = function() {
+          console.log(`Foto ${index + 1} tidak ditemukan di folder 'images/'`);
+        };
+      });
+    };
+  </script>
+</body>
+</html>
